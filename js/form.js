@@ -8,7 +8,7 @@ botaoAdicionar.addEventListener("click", function (event) {
 
     //cria a TR e a TD do paciente
     var pacienteTr = montaTr(paciente);
-    
+
     var erros = validaPaciente(paciente);
     console.log(erros);
     if (erros.length > 0) {
@@ -32,7 +32,7 @@ function exibirMensagensDeErro(erros) {
     var ul = document.querySelector("#mensagens-erro");
     ul.innerHTML = "";
 
-    erros.forEach(function(erro) {
+    erros.forEach(function (erro) {
         var li = document.createElement("li");
         li.textContent = erro;
         ul.appendChild(li);
@@ -76,7 +76,7 @@ function validaPaciente(paciente) {
 
     var erros = [];
 
-    if(paciente.nome.length == 0){
+    if (paciente.nome.length == 0) {
         erros.push("Preencha o nome.");
     }
 
@@ -87,10 +87,8 @@ function validaPaciente(paciente) {
         erros.push("Altura inválida!");
     }
 
-    if(paciente.gordura.length == 0){
+    if (paciente.gordura.length == 0) {
         erros.push("Preencha a gordura");
     }
-
     return erros;
-
 }
